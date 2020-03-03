@@ -1,0 +1,65 @@
+#entreprise {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  header { .section-header; }
+
+  fieldset {
+    .fieldset;
+
+    button { #default > .button; }
+    input, textarea, select { #default > .input; }
+
+    div[class^="flex"] {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+      &:not(.form-file) { .custom-input(row); }
+      &.flex-column:not(.form-file) { .custom-input(column); }
+
+
+      input { width: 100%; }
+    }
+
+    .form-select {
+      button {
+        .t(200ms);
+        &:hover { opacity: .8; }
+      }
+
+      div {
+        select { .custom-select }
+
+        .select-delete {
+          color: @red;
+          font-size: 20px;
+          margin-left: 10px;
+        }
+        &:first-child { .select-delete { visibility: hidden; } }
+      }
+
+      .select-add { color: @green; }
+    }
+
+    .form-file {
+      width: 100%;
+      flex-direction: column;
+      input { .custom-input-file; }
+    }
+
+    textarea {
+      padding: 10px;
+      border-radius:5px;
+      width: 500px;
+      min-width: 300px;
+      min-height: 250px;
+    }
+
+    button[type="submit"] {
+      #default > .button > .style;
+      #default > .button > .style > .success;
+    }
+  }
+
+}

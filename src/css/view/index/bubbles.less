@@ -1,0 +1,156 @@
+// BUBBLES
+#bubbles {
+	overflow: hidden;
+	position: relative;
+	// head
+	.bubbles--head{
+		position: relative;
+	  height: 150px;
+	  overflow: hidden;
+
+		.head--skewed-bg--white-lighter {
+			.skewed-bg(fade(@white,50%), 5deg, top left);
+		}
+		.head--skewed-bg--white {
+			.skewed-bg(@white, -5deg, top right);
+		}
+	} // end--head
+
+	// content
+	.bubbles--content{
+		background-color: @white;
+
+		// wrapper
+		.content--wrapper {
+			display: flex;
+			justify-content: center;
+			position: relative;
+			padding-bottom: 100px;
+
+			.content--bg {
+				background-image: url("@{img}/hexagon/fond_img.png");
+				background-size: contain;
+				@media (max-width: @phone) { &{ background-size: auto; } }
+				background-position: top center;
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				opacity: .7;
+			} // end--.content-bg
+
+			ul {
+				#default > .list;
+				z-index: 1;
+
+				// écran d'ordi
+				@media (min-width: @tablet) {
+
+					// rangées
+					.content--row {
+						display: flex;
+						justify-content: center;
+
+						li { position: relative; }
+
+						// première rangée
+						&:first-child {
+
+							// Hexagone 1
+							li:first-child{ margin-top: -7%; }
+
+							// Hexagone 2
+							li:last-child{
+								align-self: flex-end;
+								left: 20%;
+							} // end--Hexagone 2
+						} // end--première rangée
+
+						// dexuième rangée
+						&:nth-child(2) {
+							margin: -5% 0;
+
+							li { margin: 0 -3%; }
+
+							// Hexagone 3
+							li:first-child{ margin: 0; }
+
+							// Hexagone 4
+							li:nth-child(2){ left: 5%; }
+
+							// Hexagone 5
+							li:last-child{ align-self: flex-end; }
+
+						} // end--dexuième rangée
+
+						// dernière rangée
+						&:last-child {
+							// Hexagone 6
+							li:first-child{ align-self: flex-start; }
+
+							// Hexagone 7
+							li:last-child{ margin-top: 8%; }
+						} // end--dernière rangée
+
+						img {
+							width: 50%;
+							.t(400ms);
+							&:hover{ transform: scale(1.1); filter: saturate(1.5); }
+						} // end--img
+					} // end--rangées
+
+				} // end--@media
+
+				// écran de tablette
+				@media (max-width: @tablet) {
+					& { margin-top: -10%; }
+
+					// rangées
+					.content--row {
+						text-align: center;
+
+						li {
+							display: inline-block;
+							width:20%;
+						}
+
+						&:nth-child(2) { margin: -5% 0; }
+
+						img {
+							max-width: 100%;
+							.t(400ms);
+							&:hover{ transform: scale(1.1); filter: saturate(1.5); }
+						} // end--img
+					} // end--rangées
+
+				} // end--@media
+
+				// écran de smartphone
+				@media (max-width: @phone) {
+					& { margin-top: -25%; }
+
+					// rangées
+					.content--row {
+						text-align: center;
+
+						li {
+							display: inline-block;
+							width:30%;
+						}
+
+						&:nth-child(2) { margin: -8% 0; }
+
+						img {
+							max-width: 100%;
+							.t(400ms);
+							&:hover{ transform: scale(1.1); filter: saturate(1.5); }
+						} // end--img
+					} // end--rangées
+
+				} // end--@media
+
+			} // end--ul
+		} // end--wrapper
+
+
+	} // end--content
+} // end--BUBBLES

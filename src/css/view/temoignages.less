@@ -1,0 +1,89 @@
+.tem-article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  header { .section-header; }
+
+  .temoignages-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+    margin-bottom: 100px;
+
+    article {
+      .temoignages(150px);
+      align-self: stretch;
+      flex: 1 0 21%;
+      padding: 0 20px;
+      padding-bottom: 20px;
+      background-color: @white;
+      border: 3px solid darken(@white,3%);
+      margin: 20px;
+      @media (max-width: @phone) {
+        & {
+          flex-direction: column;
+          padding: 20px 0;
+          margin: 5px;
+        }
+      }
+      .t(600ms);
+      &:hover { border-color: darken(@white,10%); }
+
+      .students--message {
+        header {
+          h3, h4 { text-align: center; }
+        } // end--header
+
+        div {
+          p { margin-top: 0; }
+        }
+      } // end--.students--message
+    } // end--article
+
+  }
+
+  .temoignages-info {
+    // head
+  	.info--head {
+  		position: relative;
+  	  height: 100px;
+  	  overflow: hidden;
+
+  		.head--skewed-bg {
+  			.skewed-bg(@white, -3deg, top right);
+  		 }
+  	} // end--head
+
+    .info--wrapper {
+      margin-bottom: -60px;
+      display: flex;
+      align-items: center;
+      background-color: @white;
+      font-size: 16px;
+      padding: 20px 30px;
+      padding-bottom: 100px;
+
+      p {
+        margin: 0;
+        padding: 10px 50px;
+
+        // écran de tablette
+        @media (max-width: @tablet) {
+          & { padding: 10px; }
+        }
+      }
+      i {
+        font-size: 50px;
+        color: @grey;
+
+        // écran de tablette
+				@media (max-width: @tablet) {
+          & { display: none; }
+        }
+      }
+    }
+  }
+}

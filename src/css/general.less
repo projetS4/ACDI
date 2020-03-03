@@ -1,0 +1,68 @@
+/* ===================================== */
+/* ============== GENERAL ============== */
+/* ===================================== */
+body {
+	font-family: 'raleway', sans-serif;
+	font-size: 15px;
+	text-align: left;
+	color: @black;
+	background-color: fade(@white, 10%);
+
+  min-height: 100vh; // sticky footer
+
+	display: flex;
+	flex-direction: column;
+}
+p,h1,h2,h3,h4,a,em,strong{
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+*,*::after,*::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+a {
+	text-decoration: none;
+	outline-color: fade(@green,0%);
+	color: @lightpurple;
+	.t(200ms);
+	&:hover { color: @green; }
+	&:focus { outline-color: fade(@green,50%); }
+}
+h1,h2,h3,h4,h5,h6 { font-family: 'open sans', sans-serif; }
+
+mark { background-color: fade(@green,50%); padding: 2px 5px; }
+
+/* SELECTION */
+::selection {
+	background: @darkpurple;
+	color: @white;
+}
+::-moz-selection {
+	background: @darkpurple;
+	color: @white;
+}
+::-webkit-selection {
+	background: @darkpurple;
+	color: @white;
+}
+::-o-selection {
+	background: @darkpurple;
+	color: @white;
+}
+::-ms-selection {
+	background: @darkpurple;
+	color: @white;
+}
+::-khtml-selection {
+	background: @darkpurple;
+	color: @white;
+}
+/* SELECTION */

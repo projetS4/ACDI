@@ -1,0 +1,225 @@
+/* ===================================== */
+/* ============ BREAKPOINTS ============ */
+/* ===================================== */
+@phone: 480px;
+@tablet: 1024px;
+
+@media (max-width: @tablet) {
+  #header {
+    background-color:inherit;
+    #logo { width: 300px; }
+
+    nav ul li a span { display: none; }
+  }
+
+  #navigation {
+    .menu--normal { display: none; }
+    .menu--burger { display: block; }
+  }
+
+  #numbers {
+
+    .numbers--wrapper {
+      text-align: center;
+      margin-top: -50px;
+      margin-bottom: -50px;
+      h2 {
+        margin-top: 50px;
+        position: static;
+        display: inline-block;
+        font-size: 25px;
+      }
+
+      .numbers--content {
+          .number--value { font-size: 70px; }
+          .number--title {
+            margin-top: 0;
+            font-size: 12px;
+          }
+      }
+    }
+  }
+
+  #students {
+    .students--content {
+      .content--wrapper {
+        article {
+          flex-direction: column;
+
+          .students--photo {
+            @size: 150px;
+
+            width: @size;
+            height: @size;
+
+            svg {
+  					  width: @size;
+  					  height: @size;
+  					} // end--svg
+
+  					.photo--border { height: @size; }
+
+            .photo {
+  						width: @size;
+  						height: @size;
+  					}
+          }
+          .students--message {
+            padding: 0;
+            header {
+              display: block;
+              text-align: center;
+              display: flex;
+              flex-direction: column;
+              h3 i { display: none; }
+              h4 { max-width: 100%; }
+            }
+          }
+
+        }
+
+        nav {
+          padding: 0;
+          ul button {
+            font-size: 70px;
+          }
+        }
+
+      }
+    }
+  }
+
+  #footer {
+    .footer--content{
+      .footer--partners{
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          img { width: 120px; }
+        }
+
+        .partners--title {
+          margin-top: 10px;
+          h2 { font-size: 20px; }
+
+        }
+      }
+    }
+  }
+
+}
+
+@media (max-width: @phone) {
+
+  #header {
+    height: 250px;
+    background-size: auto;
+    flex-direction: column;
+    justify-content: flex-end;
+    form {
+      position: static;
+    }
+  }
+
+  #slogan {
+    margin:0;
+    padding: 10px;
+    p { width: 100%; }
+  }
+
+  #numbers {
+    .numbers--wrapper {
+      .numbers--content {
+        ul {
+          flex-direction: column;
+          align-items: center;
+          li {
+            width: 100%;
+            margin: 10px 0;
+          }
+        }
+        .number--value { font-size: 90px; }
+        .number--title {
+          margin-top: 0;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  #slideshow {
+    height: 300px;
+    .slide {
+      img { height: 100%; width: auto; }
+      h2 {
+        font-size: 20px;
+        a { padding: 5px 15px; }
+      }
+    }
+  }
+
+  #students {
+    .students--head h2 {
+      font-size: 40px;
+    }
+
+    .students--content {
+      .content--wrapper {
+        article { width: 100%; }
+        nav {   top: 7%; }
+      }
+    }
+  }
+
+  #footer {
+    .footer--content{
+      .footer--contact {
+
+        .contact--form {
+          textarea,input { min-width: 100%; }
+        }
+
+        .contact--submit {
+          flex-direction: column;
+          button {
+            .pattern-bg;
+            color: white;
+            font-weight: 600;
+            background-color: @green;
+            background-size: cover;
+            border-radius: 10px;
+            padding: 5px 10px;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            span { display: block; }
+            i {
+              margin-left: 10px;
+              font-size: inherit;
+            }
+          }
+        }
+      }
+    }
+
+    .footer--authors {
+      margin: 50px 0;
+      flex-direction: column;
+      p {
+        margin: 5px;
+        width: 100%;
+        text-align: center;
+      }
+      p:nth-child(2) {
+        order:3;
+      }
+      p:last-child {
+  			padding-left: 0;
+  			text-align: center;
+  		}
+    }
+  }
+
+}

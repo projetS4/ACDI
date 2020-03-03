@@ -1,0 +1,170 @@
+// CARTE DES IUT
+#carte {
+	.map-header {
+		.section-header;
+
+		p {
+			line-height: 1.5;
+			color: @darkpurple;
+			font-size: 16px;
+			text-align: center;
+			width: 50%;
+		}
+
+		.iut-proche {
+			#default > .button;
+			#default > .button > .style;
+			#default > .button > .style > .success;
+		}
+	}
+
+	.map-filtre {
+		margin: 10px;
+
+		a {
+			padding: 5px 15px;
+			border-radius: 20px;
+			background-color: @white;
+			line-height: 2;
+
+		}
+
+		.selected {
+			background-color: @white;
+			color: @green;
+			font-weight: 600;
+
+			&::before {
+				color: @grey;
+				margin-right: 5px;
+				content: "\f057";
+        font-family: "Font Awesome 5 Free";
+				.t(500ms);
+			}
+			&:hover { &::before { color: darken(@grey,10%); } }
+		}
+	}
+
+	.map-wrapper {
+		position: relative;
+		background: #acb6e5;
+		background: -webkit-linear-gradient(to top right, #86fde8, #acb6e5);
+		background: linear-gradient(to top right, #86fde8, #acb6e5);
+
+		margin-bottom: -60px;
+
+		#map {
+			width: 100%;
+			height: 110vh;
+		}
+
+		.info-wrapper {
+			display: none;
+			top: 0;
+			position: absolute;
+			height: 100%;
+			width: 300px;
+
+			.fermer {
+				#default > .button;
+				position: absolute;
+				top: 5px;
+				left: 5px;
+				color: fade(@black, 30%);
+				font-size: 20px;
+				.t(200ms);
+				&:hover{ opacity: .7; }
+			}
+
+			.info-content {
+				display: flex;
+				flex-direction: column;
+				background-color: fade(white,20%);
+				height: 100%;
+				padding: 20px;
+
+				#info {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+
+					.loading {
+						color: white;
+						font-size: 50px;
+					}
+
+					h3, h4 {
+						text-align: center;
+						border: 1px solid fade(@black,10%);
+						padding: 7px 20px;
+						background-color: fade(@black,5%);
+					}
+
+					h4 { color: fade(@black,60%); }
+
+					.iut-logo { text-align: center; }
+
+					img {
+						max-width: 100%;
+						max-height: 150px;
+					}
+
+					.no-result {
+						i { color: @red; }
+						font-weight: 600;
+					}
+
+					.iut-list_lp, .iut-lp { display: none; }
+
+					button {
+						#default > .button;
+						font-weight: 500;
+						text-align: left;
+						color: @lightpurple;
+						.t(200ms);
+						&:hover { color: @green; }
+
+						&.list {
+							color: @darkpurple;
+							font-weight: 600;
+							background-color: @white;
+							padding: 10px 20px;
+							text-align: center;
+							&:hover { opacity: .7; }
+						}
+					}
+
+					li { padding: 10px; }
+
+					.iut, .iut-lp {
+						ul {
+							#default > .list;
+							li {
+								font-weight: 500;
+
+								display: flex;
+								align-items: center;
+
+								&:not(:last-child) { border-bottom: 5px solid fade(@darkpurple, 10%); }
+
+								.red { color: @red; }
+
+								i { margin-right: 5px; }
+							}
+						}
+					}
+
+					.region {
+						width: 100%;
+						ul { width: 100%; }
+						&.list-lp { display: none; }
+					}
+
+				}
+			}
+		}
+	}
+
+	.info { display: none; }
+}

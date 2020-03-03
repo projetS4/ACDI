@@ -1,0 +1,319 @@
+#admin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  header { .section-header; }
+
+  .admin-fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    // tout ce qui est en anglais n'apparaît pas sur les carrousel
+    .en:not(input) { display: none; }
+
+    fieldset {
+      margin: 20px;
+      .fieldset;
+
+      select {
+        #default > .input;
+        .custom-select;
+      }
+
+      .slideshow {
+        width: 100%;
+        height: 200px;
+        border-radius: 5px;
+
+        .slide {
+          border-radius: 5px;
+          h2 {
+            bottom: 20%;
+      			font-size: 15px;
+            a { padding: 5px 15px; }
+      		}
+
+          ul {
+            #default > .list;
+            display: flex;
+            position: absolute;
+            top: 0;
+            padding: 5px;
+
+            button { #default > .button; }
+
+            button, a {
+              display: block;
+              padding: 5px 15px;
+              background-color: @white;
+              font-weight: 600;
+              .t(200ms);
+              &:hover { background-color: white; }
+            }
+
+            button {
+              color: @lightpurple;
+              border-radius: 50px 0 0 50px;
+            }
+            a {
+              color: @red;
+              border-radius: 0 50px 50px 0;
+            }
+          }
+        } //end--slide
+
+      } //end--slideshow
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        .form-image {
+          display: flex;
+          margin: 10px 0;
+          align-self: flex-end;
+          input { .custom-input-file }
+        }
+
+        .update-exit {
+          display: none;
+          text-align: center;
+          button {
+            #default > .button;
+            margin: 10px 0;
+            color: @grey;
+            .t(200ms);
+            &:hover { color: lighten(@grey,10%); }
+          }
+        }
+
+        div:not([class]) {
+          margin: 10px 0;
+          .custom-input(row) !important;
+
+          input, textarea, select { #default > .input; }
+          textarea { height: 200px; }
+        }
+
+        .load { width: 100%; }
+
+        [type="submit"] {
+          #default > .button;
+          #default > .button > .style;
+          #default > .button > .style > .success;
+        }
+      }
+    }
+  }
+
+  .admin-carousel {
+    .slideshow {
+      .slide {
+        h2 {
+          bottom: 20%;
+          font-size: 15px;
+          a { padding: 5px 15px; }
+        }
+      } //end--slide
+
+    } //end--slideshow
+
+  }
+
+  .admin-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+
+  .admin-partners {
+    .slideshow {
+      background-color: @darkpurple;
+      .slide {
+        img { width: auto; }
+        h2 { display: none; }
+      } //end--slide
+
+    } //end--slideshow
+  }
+
+  .admin-testimonies {
+    .slideshow {
+      background-color: @grey;
+      .slide {
+        h2 {
+          font-size: 30px !important;
+          background: none;
+          font-style: normal;
+          font-weight: 400;
+          position: static;
+          text-transform: uppercase;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 0;
+          span { font-weight: 800; }
+        }
+      } //end--slide
+
+    } //end--slideshow
+
+    .load div div:not(:first-child) { padding-left: 10px; }
+
+  }
+
+
+  .admin-map {
+    .choix {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .choix-select { display: none; }
+
+      p {
+        font-weight: 600;
+        padding-bottom: 5px;
+        border-bottom: 1px solid @white;
+        i { color: @grey; }
+      }
+
+      [type="radio"] {
+        display: none;
+
+        &+label {
+          .t(200ms);
+          cursor: pointer;
+          &:hover { opacity: .8; }
+        }
+
+        &:checked+label {
+          cursor: default;
+          &:hover { opacity: 1; }
+        }
+
+        &+label::before {
+          margin: 0 5px;
+          content: "\f111";
+          font-family: "Font Awesome 5 Free";
+          color: @grey;
+        }
+        &:checked+label::before {
+          content: "\f058";
+          font-family: "Font Awesome 5 Free Solid";
+          color: @green;
+        }
+      }
+    }
+
+    form {
+      .form-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        div div:not(:first-child) { padding-left: 10px; }
+      }
+      div:not(.form-image):not(.form-content) {
+        .custom-input(row) !important;
+        div { .custom-input(column)  !important; }
+      }
+
+
+      .resp {
+        &.first { button { visibility: hidden; } }
+        button {
+          #default > .button;
+          color: @red;
+          font-size: 20px;
+          .t(200ms);
+          &:hover { opacity: .8; }
+        }
+      }
+
+      .resp-add {
+        display: flex;
+        justify-content: center;
+
+        .add-btn {
+          #default > .button;
+          color: @green;
+          .t(200ms);
+          &:hover { opacity: .8; }
+        }
+      }
+
+    }
+
+  }
+
+  .admin-numbers {
+    ol {
+      font-size: 20px;
+      div {
+        font-size: 15px;
+        padding: 0 10px;
+      }
+    }
+  }
+
+  .admin-menu {
+    .select-sous-rubrique { display: none; }
+
+    .sous-rubrique { margin: 10px; }
+
+    [type="checkbox"] {
+      display: none;
+
+      &+label {
+        .t(200ms);
+        cursor: pointer;
+        &:hover { opacity: .8; }
+      }
+
+      &:checked+label {
+        &:hover { opacity: 1; }
+      }
+
+      &+label::before {
+        margin: 0 5px;
+        content: "\f0c8";
+        font-family: "Font Awesome 5 Free";
+        color: @grey;
+      }
+      &:checked+label::before {
+        content: "\f14a";
+        font-family: "Font Awesome 5 Free Solid";
+        color: @green;
+      }
+    }
+
+    ul {
+      font-size: 20px;
+      line-height: 1.5;
+      button, a {
+        font-size: 15px;
+        .t(200ms);
+        &:hover { opacity: .7; }
+      }
+      button {
+        #default > .button;
+        color: @lightpurple;
+      }
+      a { color: @red; }
+    }
+
+  }
+
+  .admin-compte {
+    form div div:not(:first-child) {
+      padding-left: 10px;
+    }
+  }
+
+}

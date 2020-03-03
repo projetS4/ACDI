@@ -1,0 +1,28 @@
+#connexion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  header { .section-header; }
+
+  fieldset {
+    .fieldset;
+
+    button { #default > .button; }
+    input { #default > .input; }
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px 0;
+      & { .custom-input(row); }
+    }
+
+    button[type="submit"] {
+      #default > .button > .style;
+      #default > .button > .style > .success;
+    }
+  }
+
+}

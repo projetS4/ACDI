@@ -56,19 +56,24 @@ class Model{
 
 		$sql = "SELECT * FROM $table_name";
 
-		try {
+		//try {
 
-	    $rep = Model::$pdo->query($sql);
-	    $rep->setFetchMode(PDO::FETCH_CLASS, $class_name);
+			//grosse injection sql
+	    	/*$rep = Model::$pdo->query($sql);
+	    	$rep->setFetchMode(PDO::FETCH_CLASS, $class_name);*/
+	    	//remplacr par
+	    	$rep= Model::$pdo->prepare($sql);
+	    	$rep->execute();
+	    	$rep->setFetchMode(PDO::FETCH_CLASS, $class_name);
 
 			$tab = $rep->fetchAll();
 			foreach ($tab as $t) $t->set("image", Image::select($dir, $t->get($primary_key)));
 
-	    return $tab;
+	    	return $tab;
 
-		} catch(PDOException $e) {
+		/*} catch(PDOException $e) {
 			return false;
-		}
+		}*/
   }
 
 	// Sélectionner le dernier tuple
@@ -81,9 +86,12 @@ class Model{
     $sql = "SELECT * FROM $table_name ORDER BY id DESC";
 
 		try {
-
-			$rep = Model::$pdo->query($sql);
-	    $rep->setFetchMode(PDO::FETCH_CLASS, $class_name);
+			//injection sql 
+			/*$rep = Model::$pdo->query($sql);
+	    	$rep->setFetchMode(PDO::FETCH_CLASS, $class_name);*/
+	    	$rep= Model::$pdo->prepare($sql);
+	    	$rep->execute();
+	    	$rep->setFetchMode(PDO::FETCH_CLASS, $class_name);
 
 			$tab = $rep->fetchAll();
 			foreach ($tab as $t) $t->set("image", Image::select($dir, $t->get($primary_key)));

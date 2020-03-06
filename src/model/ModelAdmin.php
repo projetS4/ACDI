@@ -4,7 +4,7 @@ class ModelAdmin extends Model {
   protected $identifiant;
   protected $mdp;
 
-  protected static $table = "`MON-admin`";
+  protected static $table = "`mon-admin`";
   protected static $class = "ModelAdmin";
   protected static $primary = "identifiant";
   protected static $dir = NULL;

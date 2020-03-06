@@ -7,7 +7,7 @@ class ModelNombre extends Model {
   protected $valeur;
   protected $unite;
 
-  protected static $table = "`MON-nombres`";
+  protected static $table = "`mon-nombres`";
   protected static $class = "ModelNombre";
   protected static $primary = "id";
   protected static $dir = NULL;

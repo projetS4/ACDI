@@ -6,7 +6,7 @@ class ModelLP extends Model {
   protected $sigle;
   protected $site;
 
-  protected static $table = "`MON-lpros`";
+  protected static $table = "`mon-lpros`";
   protected static $class = "ModelLP";
   protected static $primary = "id";
   protected static $dir = NULL;

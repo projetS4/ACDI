@@ -15,7 +15,7 @@ class ModelIUT extends Model {
   protected $image;
   protected $id_responsable;
 
-  protected static $table = "`MON-instituts`";
+  protected static $table = "`mon-instituts`";
   protected static $class = "ModelIUT";
   protected static $primary = "institut";
   protected static $dir = "img/upload/iut/";

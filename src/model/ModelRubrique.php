@@ -6,7 +6,7 @@ class ModelRubrique extends Model {
   protected $nom_en;
   protected $rubiques_filles;
 
-  protected static $table = "`MON-rubriques`";
+  protected static $table = "`mon-rubriques`";
   protected static $class = "ModelRubrique";
   protected static $primary = "id";
   protected static $dir = NULL;

@@ -11,13 +11,14 @@ class ModelTemoignage extends Model {
   protected $message_en;
   protected $image;
 
-  protected static $table = "`MON-temoignages`";
+  protected static $table = "`mon-temoignages`";
   protected static $class = "ModelTemoignage";
   protected static $primary = "id";
   protected static $dir = "img/upload/temoignages/";
 
   // enregistrer un témoignage
-  public function save() {
+  //methode qui sert à rien car il y a la méthode générique 
+  /*public function save() {
     $table_name = static::$table;
 
     $sql = "INSERT INTO ";
@@ -48,7 +49,7 @@ class ModelTemoignage extends Model {
   		$req->execute($values);
 
   	} catch(PDOException $e) { return false; }
-  }
+  }*/
 }
 
 ?>

@@ -10,7 +10,7 @@ class ModelArticle extends Model {
   protected $tags_en;
   protected $id_rubrique;
 
-  protected static $table = "`MON-articles`";
+  protected static $table = "`mon-articles`";
   protected static $class = "ModelArticle";
   protected static $primary = "id";
   protected static $dir = NULL;

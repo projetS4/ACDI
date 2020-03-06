@@ -1,10 +1,10 @@
 <?php
 class Conf {
   static private $databases = array(
-    'hostname' => 'webinfo.iutmontp.univ-montp2.fr',  // nom de l'hôte
-    'database' => 'baurensm2',   // nom de la base de données
-    'login' => 'baurensm2',        // identifiant
-    'password' => 'MAXbaure'         // mot de passe
+    'hostname' => 'webinfo',  // nom de l'hôte
+    'database' => 'joubertj',   // nom de la base de données
+    'login' => 'joubertj',        // identifiant
+    'password' => 'canard'         // mot de passe
   );
 
   static public function getData($data) {

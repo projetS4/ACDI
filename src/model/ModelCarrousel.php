@@ -6,7 +6,7 @@ class ModelCarrousel extends Model {
   protected $lien;
   protected $image;
 
-  protected static $table = "`MON-slides`";
+  protected static $table = "`mon-slides`";
   protected static $class = "ModelCarrousel";
   protected static $primary = "id";
   protected static $dir = "img/upload/slides/";

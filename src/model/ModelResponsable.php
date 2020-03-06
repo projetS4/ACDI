@@ -6,7 +6,7 @@ class ModelResponsable extends Model {
   protected $prenom;
   protected $mail;
 
-  protected static $table = "`MON-responsables`";
+  protected static $table = "`mon-responsables`";
   protected static $class = "ModelResponsable";
   protected static $primary = "id";
   protected static $dir = NULL;

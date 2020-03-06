@@ -47,7 +47,7 @@
           </div>
 
           <div>
-            <input type="text" name="age" id="testimonies-age" />
+            <input type="number" name="age" id="testimonies-age" /><!--text remplacer par number-->
             <label for="testimonies-age">Âge</label>
           </div>
 
